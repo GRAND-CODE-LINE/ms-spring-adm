@@ -2,7 +2,16 @@ package com.minita.adm.model;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.Data;
+
+@Data
+@Document
 public class Person {
+@Id
+ private Integer id;
 
  private String Nombre;
  
@@ -86,7 +95,5 @@ public Date getFechaNacimiento() {
 public void setFechaNacimiento(Date fechaNacimiento) {
 	FechaNacimiento = fechaNacimiento;
 }
- 
- 
- 
+
 }
