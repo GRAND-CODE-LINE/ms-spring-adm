@@ -2,91 +2,97 @@ package com.minita.adm.model;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+@Data
+@Document("persons")
 public class Person {
+	@Id
+	private String id;
+	@NotBlank
+	private String nombre;
+	@NotBlank
+	private String apaterno;
+	@NotBlank
+	private String amaterno;
+	
+	private String email;
+	@NotBlank
+	private String tipoDocumento;
+	@NotBlank
+	private int numeroDocumento;
+	@NotBlank
+	private Date fechaNacimiento;
+	
+	
+	
+	
+	
+	public Person(String id, @NotBlank String nombre, @NotBlank String apaterno, @NotBlank String amaterno,
+			String email, @NotBlank String tipoDocumento, @NotBlank int numeroDocumento,
+			@NotBlank Date fechaNacimiento) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apaterno = apaterno;
+		this.amaterno = amaterno;
+		this.email = email;
+		this.tipoDocumento = tipoDocumento;
+		this.numeroDocumento = numeroDocumento;
+		this.fechaNacimiento = fechaNacimiento;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApaterno() {
+		return apaterno;
+	}
+	public void setApaterno(String apaterno) {
+		this.apaterno = apaterno;
+	}
+	public String getAmaterno() {
+		return amaterno;
+	}
+	public void setAmaterno(String amaterno) {
+		this.amaterno = amaterno;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+	public void setTipoDocumento(String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
+	public int getNumeroDocumento() {
+		return numeroDocumento;
+	}
+	public void setNumeroDocumento(int numeroDocumento) {
+		this.numeroDocumento = numeroDocumento;
+	}
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
 
- private String Nombre;
- 
- private String Apaterno;
- 
- private String Amaterno;
- 
- private String Email;
- 
- private String TipoDocumento;
- 
- private int NumeroDocumento;
- 
- private Date FechaNacimiento;
- 
 
-public Person(String nombre, String apaterno, String amaterno, String email, String tipoDocumento, int numeroDocumento,
-		Date fechaNacimiento) {
-	super();
-	Nombre = nombre;
-	Apaterno = apaterno;
-	Amaterno = amaterno;
-	Email = email;
-	TipoDocumento = tipoDocumento;
-	NumeroDocumento = numeroDocumento;
-	FechaNacimiento = fechaNacimiento;
-}
-
-public String getNombre() {
-	return Nombre;
-}
-
-public void setNombre(String nombre) {
-	Nombre = nombre;
-}
-
-public String getApaterno() {
-	return Apaterno;
-}
-
-public void setApaterno(String apaterno) {
-	Apaterno = apaterno;
-}
-
-public String getAmaterno() {
-	return Amaterno;
-}
-
-public void setAmaterno(String amaterno) {
-	Amaterno = amaterno;
-}
-
-public String getEmail() {
-	return Email;
-}
-
-public void setEmail(String email) {
-	Email = email;
-}
-
-public String getTipoDocumento() {
-	return TipoDocumento;
-}
-
-public void setTipoDocumento(String tipoDocumento) {
-	TipoDocumento = tipoDocumento;
-}
-
-public int getNumeroDocumento() {
-	return NumeroDocumento;
-}
-
-public void setNumeroDocumento(int numeroDocumento) {
-	NumeroDocumento = numeroDocumento;
-}
-
-public Date getFechaNacimiento() {
-	return FechaNacimiento;
-}
-
-public void setFechaNacimiento(Date fechaNacimiento) {
-	FechaNacimiento = fechaNacimiento;
-}
- 
- 
- 
 }
