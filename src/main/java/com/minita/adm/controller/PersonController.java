@@ -1,4 +1,4 @@
-package Controller;
+package com.minita.adm.controller;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.minita.adm.model.Person;
-import com.minita.adm.model.personaInterface;
+import com.minita.adm.repository.PersonRepository;
 
 @CrossOrigin
 @RestController
@@ -25,7 +25,7 @@ import com.minita.adm.model.personaInterface;
 public class PersonController {
 
 	@Autowired
-	private personaInterface personainterface;
+	private PersonRepository personainterface;
 	
 	@GetMapping("listar")
 	List<Person> index(){
