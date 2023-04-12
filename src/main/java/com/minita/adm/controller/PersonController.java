@@ -19,46 +19,36 @@ import org.springframework.web.bind.annotation.RestController;
 import com.minita.adm.model.Person;
 import com.minita.adm.repository.PersonRepository;
 
+import com.minita.adm.service.PersonService;
+
 @CrossOrigin
 @RestController
-@RequestMapping("/Person")
+@RequestMapping("/person")
 public class PersonController {
 
 	@Autowired
-	private PersonRepository personainterface;
-	
+	private PersonService personservice;
+
 	@GetMapping("listar")
-	List<Person> index(){
-		return personainterface.findAll();
+	List<Person> index() {
+		return personservice.index();
 	}
-	@ResponseStatus(HttpStatus.CREATED)
-	@PostMapping("create")
-	Person create(@RequestBody Person person) {
-	return personainterface.save(person);
+
+	@PostMapping("/create")
+	public Person create(@RequestBody Person person) {
+		return personservice.create(person);
 	}
+
 	@PutMapping("{id}")
-	Person update(@PathVariable Integer id,@RequestBody Person person){
-		Person persondb = personainterface
-				.findById(id)
-				.orElseThrow(RuntimeException::new);
-	persondb.setNombre(person.getNombre());
-	persondb.setAmaterno(person.getAmaterno());
-	persondb.setApaterno(person.getApaterno());
-	persondb.setEmail(person.getEmail());
-	persondb.setFechaNacimiento(person.getFechaNacimiento());
-	persondb.setNumeroDocumento(person.getNumeroDocumento());
-	persondb.setTipoDocumento(person.getTipoDocumento());
-	
-	return personainterface.save(persondb);
+	Person update(@PathVariable Integer id, @RequestBody Person person) {
+
+		return personservice.update(person);
 	}
-	
+
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("{id}")
 	void delete(@PathVariable Integer id) {
-		Person persondb = personainterface
-				.findById(id)
-				.orElseThrow(RuntimeException::new);
-		
-		personainterface.delete(persondb);
-	}
+
+		personservice.delete(id);
+
 }
