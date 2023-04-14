@@ -20,7 +20,7 @@ import com.minita.adm.model.Person;
 import com.minita.adm.repository.PersonRepository;
 import com.minita.adm.service.PersonService;
 
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping("/person")
 public class PersonController {
@@ -32,8 +32,8 @@ public class PersonController {
 	List<Person> index() {
 		return personservice.index();
 	}
-
-	@PostMapping("/create")
+	@CrossOrigin
+	@PostMapping("")
 	public Person create(@RequestBody Person person) {
 		return personservice.create(person);
 	}
