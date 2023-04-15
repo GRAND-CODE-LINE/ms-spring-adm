@@ -21,20 +21,20 @@ import com.minita.adm.repository.PersonRepository;
 
 import com.minita.adm.service.PersonService;
 
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping("/person")
 public class PersonController {
 
 	@Autowired
 	private PersonService personservice;
-
+	@CrossOrigin
 	@GetMapping("listar")
 	List<Person> index() {
 		return personservice.index();
 	}
-
-	@PostMapping("/create")
+	@CrossOrigin
+	@PostMapping("")
 	public Person create(@RequestBody Person person) {
 		return personservice.create(person);
 	}
