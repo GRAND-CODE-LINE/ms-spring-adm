@@ -27,7 +27,7 @@ public class PersonController {
 
 	@Autowired
 	private PersonService personservice;
-
+	@CrossOrigin
 	@GetMapping("listar")
 	List<Person> index() {
 		return personservice.index();
