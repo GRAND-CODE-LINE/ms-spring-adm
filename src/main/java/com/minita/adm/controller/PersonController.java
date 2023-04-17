@@ -50,5 +50,5 @@ public class PersonController {
 	void delete(@PathVariable Integer id) {
 
 		personservice.delete(id);
-
+	}
 }
