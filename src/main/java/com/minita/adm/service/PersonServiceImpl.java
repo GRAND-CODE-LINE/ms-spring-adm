@@ -27,7 +27,7 @@ public class PersonServiceImpl implements PersonService {
 		return personainterface.save(person);
 	}
 
-	public void delete(Integer id) {
+	public void delete(String id) {
 		Person persondb = personainterface.findById(id).orElseThrow(RuntimeException::new);
 
 		personainterface.delete(persondb);

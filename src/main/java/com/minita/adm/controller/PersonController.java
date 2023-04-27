@@ -46,7 +46,7 @@ public class PersonController {
 
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("{id}")
-	void delete(@PathVariable Integer id) {
+	void delete(@PathVariable String id) {
 
 		personservice.delete(id);
 	}

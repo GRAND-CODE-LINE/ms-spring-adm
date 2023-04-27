@@ -2,7 +2,6 @@ package com.minita.adm.service;
 
 import java.util.List;
 
-
 import com.minita.adm.model.Person;
 
 public interface PersonService  {
@@ -13,5 +12,6 @@ public interface PersonService  {
 
 	public Person update(Person person);
 	
-	public void delete(Integer id);
+	public void delete(String id);
+
 }
