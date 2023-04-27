@@ -5,10 +5,13 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 @Data
 @Document("persons")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Person {
 	@Id
 	private String id;

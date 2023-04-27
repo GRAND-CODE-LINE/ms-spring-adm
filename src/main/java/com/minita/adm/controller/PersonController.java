@@ -1,9 +1,11 @@
 package com.minita.adm.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,7 +19,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.minita.adm.model.Person;
-import com.minita.adm.repository.PersonRepository;
 
 import com.minita.adm.service.PersonService;
 
@@ -50,5 +51,11 @@ public class PersonController {
 	void delete(@PathVariable String id) {
 
 		personservice.delete(id);
+	}
+	
+	@CrossOrigin
+	@PostMapping("paginate")
+	Page<Person> paginate(@RequestBody Map<String, String>filter){
+		return personservice.paginate(filter);
 	}
 }
