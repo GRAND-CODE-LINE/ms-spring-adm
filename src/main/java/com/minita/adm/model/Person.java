@@ -8,9 +8,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
-@Data
-@Document("persons")
+
+
+@Document(collection = "persons")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Person {
 	@Id
@@ -26,7 +26,7 @@ public class Person {
 	@NotBlank
 	private String tipoDocumento;
 	@NotBlank
-	private int numeroDocumento;
+	private Integer numeroDocumento;
 	@NotBlank
 	private Date fechaNacimiento;
 	
@@ -48,6 +48,13 @@ public class Person {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	
+	
+	public Person() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getId() {
 		return id;
 	}
