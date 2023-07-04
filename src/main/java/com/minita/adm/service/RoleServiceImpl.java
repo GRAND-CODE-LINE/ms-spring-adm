@@ -60,7 +60,6 @@ public class RoleServiceImpl implements RoleService {
 				.withStringMatcher(StringMatcher.REGEX).withIgnoreCase(true)
 				.withMatcher("nombre", GenericPropertyMatcher.of(ExampleMatcher.StringMatcher.REGEX).ignoreCase());
 		
-		
 		Example<Role> example = Example.of(pojo, matcher);
 
 		return roleRepository.findAll(example, pageable);
