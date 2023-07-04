@@ -1,4 +1,4 @@
-package com.minita.adm.service;
+package com.gcl.adm.service;
 
 import java.util.List;
 import java.util.Map;
@@ -6,46 +6,43 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatcher;
 import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.minita.adm.model.Person;
-import com.minita.adm.repository.PersonRepository;
+import com.gcl.adm.model.Role;
+import com.gcl.adm.repository.RoleRepository;
 
 @Service
-public class PersonServiceImpl implements PersonService {
+public class RoleServiceImpl implements RoleService {
 
 	@Autowired
-	private PersonRepository personainterface;
+	private RoleRepository roleRepository;
 
-	public List<Person> index() {
-		return personainterface.findAll();
-	}
-
-	public	Person create(Person person) {
-		return personainterface.save(person);
-	}
-
-	public Person update(Person person) {
-		return personainterface.save(person);
-	}
-
-	public void delete(String id) {
-		Person persondb = personainterface.findById(id).orElseThrow(RuntimeException::new);
-		personainterface.delete(persondb);
-	}
-	
 	@Override
-	public Page<Person> paginate(Map<String,String> filters){
-		
+	public Role save(Role role) {
+		return roleRepository.save(role);
+	}
+
+	@Override
+	public Role edit(Role role) {
+		return roleRepository.save(role);
+	}
+
+	@Override
+	public void delete(Role role) {
+		roleRepository.delete(role);
+	}
+
+	@Override
+	public Page<Role> paginate(Map<String, String> filters) {
+
 		ObjectMapper mapper = new ObjectMapper();
-		Person pojo = mapper.convertValue(filters, Person.class);
+		Role pojo = mapper.convertValue(filters, Role.class);
 
 		Integer page = filters.get("page") != null ? Integer.parseInt(filters.get("page")) : 0;
 
@@ -63,9 +60,9 @@ public class PersonServiceImpl implements PersonService {
 				.withStringMatcher(StringMatcher.REGEX).withIgnoreCase(true)
 				.withMatcher("nombre", GenericPropertyMatcher.of(ExampleMatcher.StringMatcher.REGEX).ignoreCase());
 		
-		Example<Person> example = Example.of(pojo, matcher);
+		Example<Role> example = Example.of(pojo, matcher);
 
-		return  personainterface.findAll(example, pageable);
-		
+		return roleRepository.findAll(example, pageable);
+
 	}
 }

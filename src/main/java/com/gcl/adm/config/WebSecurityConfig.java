@@ -1,4 +1,4 @@
-package com.minita.adm.config;
+package com.gcl.adm.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

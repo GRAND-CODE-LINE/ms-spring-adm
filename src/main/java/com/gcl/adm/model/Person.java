@@ -1,4 +1,4 @@
-package com.minita.adm.model;
+package com.gcl.adm.model;
 
 import java.util.Date;
 

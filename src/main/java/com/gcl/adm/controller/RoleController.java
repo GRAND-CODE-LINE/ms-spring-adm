@@ -1,4 +1,4 @@
-package com.minita.adm.controller;
+package com.gcl.adm.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.minita.adm.model.Person;
-import com.minita.adm.model.Role;
-import com.minita.adm.service.PersonService;
-import com.minita.adm.service.RoleService;
+import com.gcl.adm.model.Person;
+import com.gcl.adm.model.Role;
+import com.gcl.adm.service.PersonService;
+import com.gcl.adm.service.RoleService;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

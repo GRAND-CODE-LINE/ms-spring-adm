@@ -1,4 +1,4 @@
-package com.minita.adm.model;
+package com.gcl.adm.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

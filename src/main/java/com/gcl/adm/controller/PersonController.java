@@ -1,4 +1,4 @@
-package com.minita.adm.controller;
+package com.gcl.adm.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -18,9 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.minita.adm.model.Person;
-
-import com.minita.adm.service.PersonService;
+import com.gcl.adm.model.Person;
+import com.gcl.adm.service.PersonService;
 
 //@CrossOrigin
 @RestController

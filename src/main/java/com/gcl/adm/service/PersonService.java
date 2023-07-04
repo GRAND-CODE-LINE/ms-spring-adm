@@ -1,11 +1,11 @@
-package com.minita.adm.service;
+package com.gcl.adm.service;
 
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.domain.Page;
 
-import com.minita.adm.model.Person;
+import com.gcl.adm.model.Person;
 
 public interface PersonService  {
 	
