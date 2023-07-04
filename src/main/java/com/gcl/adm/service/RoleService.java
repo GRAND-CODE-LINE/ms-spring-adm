@@ -1,10 +1,10 @@
-package com.minita.adm.service;
+package com.gcl.adm.service;
 
 import java.util.Map;
 
 import org.springframework.data.domain.Page;
 
-import com.minita.adm.model.Role;
+import com.gcl.adm.model.Role;
 
 public interface RoleService {
 
