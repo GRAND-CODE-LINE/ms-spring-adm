@@ -34,6 +34,12 @@ public class PersonController {
 		return personservice.index();
 	}
 	@CrossOrigin
+	@GetMapping("{id}")
+	public Person getById(@PathVariable String id){
+		System.out.println(id);
+		return personservice.getById(id);
+	}
+	@CrossOrigin
 	@PostMapping("")
 	public Person create(@RequestBody Person person) {
 		return personservice.create(person);

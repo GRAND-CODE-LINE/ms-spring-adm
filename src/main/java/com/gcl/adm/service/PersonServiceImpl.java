@@ -27,6 +27,13 @@ public class PersonServiceImpl implements PersonService {
 	public List<Person> index() {
 		return personainterface.findAll();
 	}
+	
+	public Person getById(String id) {
+		System.out.println("soy el Id "+ id);
+		
+		Person persondb = personainterface.findById(id).orElseThrow(RuntimeException::new);
+		return persondb;
+	}
 
 	public	Person create(Person person) {
 		return personainterface.save(person);
