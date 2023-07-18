@@ -11,6 +11,8 @@ public interface PersonService  {
 	
 	public List<Person> index();
 	
+	public Person getById(String id);
+	
 	public Person create(Person person);
 
 	public Person update(Person person);
