@@ -44,13 +44,13 @@ public class PersonController {
 	public Person create(@RequestBody Person person) {
 		return personservice.create(person);
 	}
-
+	@CrossOrigin
 	@PutMapping("{id}")
-	Person update(@PathVariable Integer id, @RequestBody Person person) {
+	Person update(@PathVariable String id, @RequestBody Person person) {
 
 		return personservice.update(person);
 	}
-
+	@CrossOrigin
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@DeleteMapping("{id}")
 	void delete(@PathVariable String id) {
