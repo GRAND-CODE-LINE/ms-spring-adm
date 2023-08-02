@@ -27,15 +27,15 @@ public class PersonServiceImpl implements PersonService {
 	public List<Person> index() {
 		return personainterface.findAll();
 	}
-	
+
 	public Person getById(String id) {
-		System.out.println("soy el Id "+ id);
-		
+		System.out.println("soy el Id " + id);
+
 		Person persondb = personainterface.findById(id).orElseThrow(RuntimeException::new);
 		return persondb;
 	}
 
-	public	Person create(Person person) {
+	public Person create(Person person) {
 		return personainterface.save(person);
 	}
 
@@ -47,10 +47,10 @@ public class PersonServiceImpl implements PersonService {
 		Person persondb = personainterface.findById(id).orElseThrow(RuntimeException::new);
 		personainterface.delete(persondb);
 	}
-	
+
 	@Override
-	public Page<Person> paginate(Map<String,String> filters){
-		
+	public Page<Person> paginate(Map<String, String> filters) {
+
 		ObjectMapper mapper = new ObjectMapper();
 		Person pojo = mapper.convertValue(filters, Person.class);
 
@@ -69,10 +69,19 @@ public class PersonServiceImpl implements PersonService {
 		ExampleMatcher matcher = ExampleMatcher.matching().withIgnorePaths("id").withIgnoreNullValues()
 				.withStringMatcher(StringMatcher.REGEX).withIgnoreCase(true)
 				.withMatcher("nombre", GenericPropertyMatcher.of(ExampleMatcher.StringMatcher.REGEX).ignoreCase());
-		
+
 		Example<Person> example = Example.of(pojo, matcher);
 
-		return  personainterface.findAll(example, pageable);
-		
+		return personainterface.findAll(example, pageable);
+
 	}
+
+	public Person getByDocument(Integer numeroDocumento) {
+
+		Person persondb = personainterface.findByNumeroDocumento(numeroDocumento);
+		System.out.println(persondb.getFechaNacimiento());
+		return persondb;
+	}
+
+
 }

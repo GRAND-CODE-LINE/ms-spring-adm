@@ -63,4 +63,11 @@ public class PersonController {
 	Page<Person> paginate(@RequestBody Map<String, String>filter){
 		return personservice.paginate(filter);
 	}
+	
+	@CrossOrigin
+	@GetMapping("getByDocument/{document}")
+	public Person getByDocument(@PathVariable Integer document){
+		System.out.println(document);
+		return personservice.getByDocument(document);
+	}
 }
