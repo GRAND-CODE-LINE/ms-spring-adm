@@ -26,7 +26,7 @@ public class Person {
 	@NotBlank
 	private String tipoDocumento;
 	@NotBlank
-	private Integer numeroDocumento;
+	private String numeroDocumento;
 	@NotBlank
 	private Date fechaNacimiento;
 	
@@ -35,7 +35,7 @@ public class Person {
 	
 	
 	public Person(String id, @NotBlank String nombre, @NotBlank String apaterno, @NotBlank String amaterno,
-			String email, @NotBlank String tipoDocumento, @NotBlank int numeroDocumento,
+			String email, @NotBlank String tipoDocumento, @NotBlank String numeroDocumento,
 			@NotBlank Date fechaNacimiento) {
 		super();
 		this.id = id;
@@ -91,10 +91,10 @@ public class Person {
 	public void setTipoDocumento(String tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
 	}
-	public int getNumeroDocumento() {
+	public String getNumeroDocumento() {
 		return numeroDocumento;
 	}
-	public void setNumeroDocumento(int numeroDocumento) {
+	public void setNumeroDocumento(String numeroDocumento) {
 		this.numeroDocumento = numeroDocumento;
 	}
 	public Date getFechaNacimiento() {

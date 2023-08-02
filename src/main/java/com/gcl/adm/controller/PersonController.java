@@ -66,7 +66,7 @@ public class PersonController {
 	
 	@CrossOrigin
 	@GetMapping("getByDocument/{document}")
-	public Person getByDocument(@PathVariable Integer document){
+	public Person getByDocument(@PathVariable String document){
 		System.out.println(document);
 		return personservice.getByDocument(document);
 	}

@@ -21,6 +21,6 @@ public interface PersonService {
 
 	public Page<Person> paginate(Map<String, String> filters);
 
-	public Person getByDocument(Integer numeroDocumento);
+	public Person getByDocument(String numeroDocumento);
 
 }

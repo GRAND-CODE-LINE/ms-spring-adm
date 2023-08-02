@@ -8,5 +8,5 @@ import com.gcl.adm.model.Person;
 
 public interface PersonRepository extends MongoRepository<Person, String> {
 
-	Person findByNumeroDocumento(Integer numeroDocumento);
+	Person findByNumeroDocumento(String numeroDocumento);
 }
