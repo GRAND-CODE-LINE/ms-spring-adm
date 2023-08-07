@@ -30,6 +30,13 @@ public class Person {
 	@NotBlank
 	private Date fechaNacimiento;
 	
+	private String genero;
+	
+	private String direccion;
+	
+	private String celular;
+	
+	
 	
 	
 	
@@ -58,49 +65,110 @@ public class Person {
 	public String getId() {
 		return id;
 	}
+
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
+
 	public String getNombre() {
 		return nombre;
 	}
+
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+
 	public String getApaterno() {
 		return apaterno;
 	}
+
+
 	public void setApaterno(String apaterno) {
 		this.apaterno = apaterno;
 	}
+
+
 	public String getAmaterno() {
 		return amaterno;
 	}
+
+
 	public void setAmaterno(String amaterno) {
 		this.amaterno = amaterno;
 	}
+
+
 	public String getEmail() {
 		return email;
 	}
+
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
 	public String getTipoDocumento() {
 		return tipoDocumento;
 	}
+
+
 	public void setTipoDocumento(String tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
 	}
+
+  
 	public String getNumeroDocumento() {
 		return numeroDocumento;
 	}
+
+
 	public void setNumeroDocumento(String numeroDocumento) {
 		this.numeroDocumento = numeroDocumento;
 	}
+
+
 	public Date getFechaNacimiento() {
 		return fechaNacimiento;
 	}
+
+
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
+
+
+	public String getGenero() {
+		return genero;
+	}
+
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+
+	public String getCelular() {
+		return celular;
+	}
+
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
 }
