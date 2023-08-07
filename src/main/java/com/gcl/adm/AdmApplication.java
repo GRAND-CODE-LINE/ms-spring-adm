@@ -8,8 +8,10 @@ import java.util.Scanner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan("com.gcl.dental.core")
 public class AdmApplication {
 
 	public static void main(String[] args) {

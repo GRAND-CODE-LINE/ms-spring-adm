@@ -15,8 +15,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gcl.adm.model.Person;
-import com.gcl.adm.repository.PersonRepository;
+import com.gcl.dental.core.model.adm.Person;
+import com.gcl.dental.core.repository.adm.PersonRepository;
 
 @Service
 public class PersonServiceImpl implements PersonService {
@@ -79,7 +79,7 @@ public class PersonServiceImpl implements PersonService {
 	public Person getByDocument(String numeroDocumento) {
 
 		Person persondb = personainterface.findByNumeroDocumento(numeroDocumento);
-		System.out.println(persondb.getFechaNacimiento());
+		//System.out.println(persondb.getFechaNacimiento());
 		return persondb;
 	}
 
