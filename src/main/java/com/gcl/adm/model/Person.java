@@ -121,7 +121,7 @@ public class Person {
 		this.tipoDocumento = tipoDocumento;
 	}
 
-
+  
 	public String getNumeroDocumento() {
 		return numeroDocumento;
 	}
