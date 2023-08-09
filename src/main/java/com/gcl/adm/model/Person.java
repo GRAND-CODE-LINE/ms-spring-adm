@@ -29,7 +29,7 @@ public class Person {
 	private String numeroDocumento;
 	@NotBlank
 	private Date fechaNacimiento;
-	
+		
 	private String genero;
 	
 	private String direccion;
