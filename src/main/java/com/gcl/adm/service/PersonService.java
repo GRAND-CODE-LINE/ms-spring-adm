@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.data.domain.Page;
 
-import com.gcl.adm.model.Person;
+import com.gcl.dental.core.model.adm.Person;
 
 public interface PersonService {
 
