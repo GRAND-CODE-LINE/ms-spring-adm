@@ -29,13 +29,12 @@ public class PersonController {
 	private PersonService personservice;
 	@CrossOrigin
 	@GetMapping("listar")
-	List<Person> index() {
+	public List<Person> index() {
 		return personservice.index();
 	}
 	@CrossOrigin
 	@GetMapping("{id}")
 	public Person getById(@PathVariable String id){
-		System.out.println(id);
 		return personservice.getById(id);
 	}
 	@CrossOrigin
