@@ -75,9 +75,7 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	public Person getByDocument(String numeroDocumento) {
-
-		Person persondb = personainterface.findByNumeroDocumento(numeroDocumento).get();
-		//System.out.println(persondb.getFechaNacimiento());
+		Person persondb = personainterface.findByNumeroDocumento(numeroDocumento);
 		return persondb;
 	}
 
