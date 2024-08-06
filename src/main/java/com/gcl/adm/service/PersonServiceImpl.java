@@ -76,7 +76,7 @@ public class PersonServiceImpl implements PersonService {
 
 	public Person getByDocument(String numeroDocumento) {
 
-		Person persondb = personainterface.findByNumeroDocumento(numeroDocumento).get();
+		Person persondb = personainterface.findByNumeroDocumento(numeroDocumento);
 		return persondb;
 	}
 
