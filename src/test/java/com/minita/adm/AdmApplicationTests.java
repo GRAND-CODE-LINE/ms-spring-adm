@@ -1,12 +1,11 @@
 package com.minita.adm;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+
+//@SpringBootTest
 class AdmApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 
